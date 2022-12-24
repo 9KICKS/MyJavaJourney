@@ -9,15 +9,13 @@ public class AccountExercise {
     }
 
     public void deposit(int amount) {
-        if(amount >0) {
+        if (amount > 0) {
             balance = balance + amount;
         }
     }
 
     public void transfer(int transfer) {
-        if (transfer > 0) {
-            balance = balance + transfer;
-        }
+        balance = balance - transfer;
     }
 
     public int getBalance() {

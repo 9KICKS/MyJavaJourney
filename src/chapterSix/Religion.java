@@ -1,2 +1,7 @@
-package chapterSix;public enum Religion {
+package chapterSix;
+
+public enum Religion {
+    CHRISTIANITY,
+    ISLAM,
+    ATHEISM
 }

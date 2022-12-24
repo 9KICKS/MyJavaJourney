@@ -1,2 +1,8 @@
-package chapterSix;public enum Race {
+package chapterSix;
+
+public enum Race {
+    BLACK,
+    WHITE,
+    ASIAN,
+    LATINOS
 }

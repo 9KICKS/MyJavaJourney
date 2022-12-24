@@ -1,2 +1,7 @@
-package chapterSix;public enum Gender {
+package chapterSix;
+
+public enum Gender {
+    MALE,
+    FEMALE,
+    NON_BINARY
 }
