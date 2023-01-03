@@ -9,10 +9,13 @@ public class CreditCardValidator {
         String cardValidity;
         System.out.println("Hello, kindly enter card details to verify: ");
         String creditCard = input.nextLine();
+        System.out.println();
+        System.out.print("Verifying ");
+        verifying();
+        System.out.println("Verification complete.");
         int evenDigitsTotal = doubledEvenDigits(creditCard);
         int oddDigitsTotal = sumOddDigits(creditCard);
         int sumOfTotal = evenDigitsTotal + oddDigitsTotal;
-
         if (sumOfTotal % 10 == 0) {
             cardValidity = "Valid Card";
         } else {
@@ -59,14 +62,23 @@ public class CreditCardValidator {
         }
         return sum;
     }
-
     private static int convertToSingleDigit(int evenDigits) {
         String stringDigit = String.valueOf(evenDigits);
         return Integer.parseInt(String.valueOf(stringDigit.charAt(0))) + Integer.parseInt(String.valueOf(stringDigit.charAt(1)));
     }
-
     private static void asterisks() {
         String asterisks = "*";
         System.out.println(asterisks.repeat(45));
+    }
+    private static void verifying() {
+        try {
+            for (int i = 0; i < 10; i++) {
+                System.out.print(">");
+                Thread.sleep(500);
+            }
+            System.out.println();
+        } catch (InterruptedException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }
