@@ -21,16 +21,10 @@ public class ECommerceCheckoutSystem {
         String customerName = input.nextLine();
         customerCheckout(list, input);
         cashierCheckout(list, input);
-
         System.out.println();
-
         receipt(list, customerName);
-
         System.out.println();
-
         System.out.println();
-
-
         secondReceipt(list, customerName);
     }
 
