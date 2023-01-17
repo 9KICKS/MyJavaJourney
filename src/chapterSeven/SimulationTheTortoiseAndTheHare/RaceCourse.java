@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 public class RaceCourse {
     private final RaceTrack raceTrack;
 
-    private static final Pail pail= new Pail();
+    private static final Pail pail = new Pail();
 
     public RaceCourse() {
         this.raceTrack = new RaceTrack();
@@ -13,7 +13,7 @@ public class RaceCourse {
 
     public static int generateRandomNumber() {
         SecureRandom random = new SecureRandom();
-        return 1+random.nextInt(10);
+        return 1 + random.nextInt(10);
     }
 
     public RaceTrack getRaceTrack() {
