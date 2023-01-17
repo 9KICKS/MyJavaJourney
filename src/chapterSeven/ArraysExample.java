@@ -8,7 +8,6 @@ public class ArraysExample {
         Scanner scanner = new Scanner(System.in);
         int [] numbers = new int[10];
         System.out.println(Arrays.toString(numbers));
-
         numbers[0] = 9;
         numbers[1] = 8;
         numbers[9] = 100;
