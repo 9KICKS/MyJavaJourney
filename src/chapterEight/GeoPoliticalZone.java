@@ -1,10 +1,9 @@
 package chapterEight;
 
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class GeoPoliticalZoneReflection {
+public class GeoPoliticalZone {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a state to know it's geo-political zone: ");
