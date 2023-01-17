@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GeoPoliticalZoneTest {
 
     @Test
-    public void testGeoPoliticalZone(){
+    public void testGeoPoliticalZone() {
         GeoPoliticalZone geoPoliticalZone = new GeoPoliticalZone();
         String expectedNorthCentral = "NORTH_CENTRAL";
         String actualNorthCentral = String.valueOf(Zone.getPoliticalZone("Niger"));
