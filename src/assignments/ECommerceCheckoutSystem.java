@@ -34,16 +34,15 @@ public class ECommerceCheckoutSystem {
         System.out.println("        THIS IS NOT A RECEIPT, KINDLY PAY " +billTotal);
         equals();
     }
-
     private static void customerReceipt(ArrayList<ECommerce> list, String customerName) {
         System.out.println("SEMICOLON STORES");
         System.out.println("MAIN BRANCH");
         System.out.println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS");
         System.out.println("TEL: 08050211753");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yy hh.mm.ss aa");
-        String currentDate = dateFormat.format(new Date()).toString();
+        String currentDate = dateFormat.format(new Date());
         System.out.println(currentDate);
-        System.out.println("Cashier: " +cashierName);
+        System.out.println("Cashier: " + cashierName);
         System.out.println("Customer Name: " + customerName);
         equals();
         System.out.printf("                 ITEM      QTY      PRICE      TOTAL(NGN)%n");
@@ -59,7 +58,6 @@ public class ECommerceCheckoutSystem {
         equals();
         System.out.println("                   Bill Total:      " +billTotal);
     }
-
     private static void secondReceipt(ArrayList<ECommerce> list, String customerName) {
         System.out.println("How much did the customer give to you? ");
         customerCash = input.nextDouble();
@@ -71,18 +69,14 @@ public class ECommerceCheckoutSystem {
         System.out.println("        THANK YOU FOR YOUR PATRONAGE");
         equals();
     }
-
     private static void dash() {
         String dash = "-";
         System.out.println(dash.repeat(60));
     }
-
     private static void equals() {
         String equals = "=";
         System.out.println(equals.repeat(60));
     }
-
-
     private static void cashierCheckout(ArrayList<ECommerce> list, Scanner input) {
         while (true) {
             System.out.println("Add more items? (yes/no): ");
@@ -104,7 +98,6 @@ public class ECommerceCheckoutSystem {
         vat = (7.5/100) * subTotal;
         billTotal = (vat - customerDiscount) + subTotal;
     }
-
     private static void customerCheckout(ArrayList<ECommerce> list, Scanner input) {
         System.out.println("What did the user buy? ");
         String purchasedItem = input.nextLine();
@@ -116,7 +109,7 @@ public class ECommerceCheckoutSystem {
         double total = numberOfItems * itemPrice;
         subTotal += total;
 
-        ECommerce eCommerce = new ECommerce(purchasedItem,numberOfItems,itemPrice,total,subTotal,customerDiscount);
+        ECommerce eCommerce = new ECommerce(purchasedItem, numberOfItems, itemPrice, total, subTotal, customerDiscount);
         list.add(eCommerce);
     }
 }
