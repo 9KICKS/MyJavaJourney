@@ -6,7 +6,7 @@ import java.util.List;
 public class Permutations {
     public static void main(String[] args){
         ArrayList<Integer> arr = new ArrayList<>();
-        System.out.println("Enter the elements of the array:");
+        System.out.print("Enter the elements of the array: ");
         String[] input = (new java.util.Scanner(System.in)).nextLine().split(" ");
         for (String num : input) {
             arr.add(Integer.parseInt(num));
