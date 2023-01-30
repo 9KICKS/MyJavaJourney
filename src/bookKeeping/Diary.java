@@ -1,59 +1,71 @@
 package bookKeeping;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Diary {
-    private final String diaryName;
-    private final ArrayList<Entry> entries;
-    private int passcode;
+    private String userName;
+    private String password;
+    ArrayList<Entry> entries;
+    private boolean isLocked;
 
-    public Diary(String diaryName, int passcode) {
-        this.diaryName = diaryName;
+    public Diary(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+        this.isLocked = true;
         entries = new ArrayList<>();
-        this.passcode = passcode;
     }
 
-    public void changePasscode(int passcode) {
-        this.passcode = passcode;
+    public String changePassword(String newPassword) {
+        if (!isLocked) {
+            this.password = newPassword;
+            return "Password changed successfully";
+        }
+        return "Diary is locked. Cannot change password.";
     }
-    public boolean validatePasscode(int passcode) {
-        return this.passcode == passcode;
+
+    public boolean validatePassword(String password) {
+        return this.password.equals(password);
     }
-    public Entry createEntry(String title, String body, int iD) {
-        return new Entry(title, body, iD);
+
+    public Entry createEntry(String title, String body) {
+        if (!isLocked) {
+            addEntry(new Entry(entries.size() + 1, title, body));
+        }
+        return null;
     }
+
     public void addEntry(Entry entry) {
         entries.add(entry);
     }
-    public boolean confirmEntry(String title) {
-        for (int i = 0; i < entries.size(); i++) {
-            Entry entry = entries.get(i);
-            if (title.equals(entry.getTitle())) {
-                return true;
-            }
-        }
-        return false;
-    }
+
     public void viewEntry() {
         for (int i = 0; i < entries.size(); i++) {
             Entry entry = entries.get(i);
-            System.out.println(entry.toString());
+            JOptionPane.showMessageDialog(null, entry.toString(), "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-    public int countEntry() {
-        return entries.size();
-    }
-    public boolean removeEntryByTitle(String entryTitle) {
-        for (int i = 0; i < entries.size(); i++) {
-            Entry entry = entries.get(i);
-            if (entry.getTitle().equals(entryTitle)) {
-                entries.remove(entry);
-                return true;
+
+    public void updateEntry(int id, String title, String body) {
+        if (!isLocked) {
+            Entry entry = findEntryByID(id);
+            if (entry != null) {
+                entry.title = title;
+                entry.body = body;
             }
         }
-        return false;
     }
-    public boolean removeEntryByEntryId(int EntryId) {
+
+    public Entry findEntryByID(int id) {
+        for (Entry entry : entries) {
+            if (entry.getID() == id) {
+                return entry;
+            }
+        }
+        return null;
+    }
+
+    public boolean deleteEntry(int EntryId) {
         for (int i = 0; i < entries.size(); i++) {
             Entry entry = entries.get(i);
             if (EntryId - 1 == i) {
@@ -63,6 +75,7 @@ public class Diary {
         }
         return false;
     }
+
     public boolean editEntry(String title, Entry newEntry) {
         for (int i = 0; i < entries.size(); i++) {
             Entry entry = entries.get(i);
@@ -73,22 +86,30 @@ public class Diary {
         }
         return false;
     }
-    public String findEntryByTitle(String entryTitle) {
+
+    public boolean confirmEntry(String title) {
         for (int i = 0; i < entries.size(); i++) {
             Entry entry = entries.get(i);
-            if (entry.getTitle().equals(entryTitle)) {
-                return entry.toString();
+            if (title.equals(entry.getTitle())) {
+                return true;
             }
         }
-        return "Entry not found.";
+        return false;
+
     }
-    public String findEntryByEntryId(int EntryId) {
-        for (int i = 0; i < entries.size(); i++) {
-            Entry entry = entries.get(i);
-            if (EntryId - 1 == i) {
-                return entry.toString();
-            }
+
+    public void lockDiary() {
+        this.isLocked = true;
+    }
+
+    public boolean unlockDiary(String password) {
+        if (validatePassword(password)) {
+            this.isLocked = false;
         }
-        return "Entry not found.";
+        return false;
+    }
+
+    public boolean isLocked() {
+        return isLocked;
     }
 }

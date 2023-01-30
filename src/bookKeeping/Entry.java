@@ -4,15 +4,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Entry {
-    private final String title;
-    private final String body;
-    private final LocalDateTime date = LocalDateTime.now();
     private final int iD;
+    String title;
+    String body;
+    private final LocalDateTime date = LocalDateTime.now();
 
-    public Entry(String title, String body, int iD) {
+    public Entry( int iD, String title, String body) {
+        this.iD = iD;
         this.title = title;
         this.body = body;
-        this.iD = iD;
+    }
+
+    public int getID() {
+        return iD;
     }
 
     public String getTitle() {
@@ -28,20 +32,15 @@ public class Entry {
         return dateTimeFormatter.format(date);
     }
 
-    public int getID() {
-        return iD;
-    }
-
     @Override
     public String toString() {
         return String.format("""
-                *************************
-                Welcome to 9KICKS Diary:
+                **************************
                 Date: %s
                 ID: %s
                 Title: %s
                 Body: %s
-                *************************
-                """, getDate(), getID(), getTitle(), getBody());
+                **************************
+                """, date, iD, title, body);
     }
 }
