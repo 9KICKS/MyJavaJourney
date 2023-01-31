@@ -35,12 +35,12 @@ public class Entry {
     @Override
     public String toString() {
         return String.format("""
-                **************************
+                ⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛
                 Date: %s
                 ID: %s
                 Title: %s
                 Body: %s
-                **************************
-                """, date, iD, title, body);
+                ⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛
+                """, getDate(), iD, title, body);
     }
 }

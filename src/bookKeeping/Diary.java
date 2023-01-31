@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Diary {
-    private String userName;
+    private final String userName;
     private String password;
     ArrayList<Entry> entries;
     private boolean isLocked;
@@ -14,6 +14,14 @@ public class Diary {
         this.password = password;
         this.isLocked = true;
         entries = new ArrayList<>();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String changePassword(String newPassword) {
