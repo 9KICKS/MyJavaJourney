@@ -7,8 +7,13 @@ import java.awt.*;
 public class PhoneBook {
     private static final MobilePhone mobilePhone = new MobilePhone("08050211753");
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
+        try { 
         phone();
+        } catch (StringIndexOutOfBoundsException | NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, error.getMessage());
+            main();
+        }
     }
 
     private static void phone() {
