@@ -8,7 +8,7 @@ public class PhoneBook {
     private static final MobilePhone mobilePhone = new MobilePhone("08050211753");
 
     public static void main(String... args) {
-        try { 
+        try {
         phone();
         } catch (StringIndexOutOfBoundsException | NumberFormatException error) {
             JOptionPane.showMessageDialog(null, error.getMessage());
@@ -74,8 +74,13 @@ public class PhoneBook {
 
     private static void checkContact() {
         String name = JOptionPane.showInputDialog("Enter contact name:");
-        if (mobilePhone.queryContact(name) == null ){
-            JOptionPane.showMessageDialog(null, "Contact not found.");
+        if (mobilePhone.queryContact(name) == null ) {
+            try {
+                JOptionPane.showMessageDialog(null, "Contact not found.");
+                main();
+            } catch (IllegalArgumentException error) {
+                JOptionPane.showMessageDialog(null, error.getMessage());
+            }
         }
         Contact contact = mobilePhone.queryContact(name);
         JOptionPane.showMessageDialog(null, "Contact name: " + contact.getName() + " | Phone number: " + contact.getPhoneNumber());
@@ -85,7 +90,12 @@ public class PhoneBook {
         String name = JOptionPane.showInputDialog("Enter name to update contact:");
         Contact oldContact = mobilePhone.queryContact(name);
         if(oldContact == null) {
-            JOptionPane.showMessageDialog(null, "Contact not found.");
+            try {
+                JOptionPane.showMessageDialog(null, "Contact not found.");
+                main();
+            } catch (IllegalArgumentException error) {
+                JOptionPane.showMessageDialog(null, error.getMessage());
+            }
         }
         String newName = JOptionPane.showInputDialog("Enter new contact name:");
         String newPhoneNumber = JOptionPane.showInputDialog("Enter new phone number:");
