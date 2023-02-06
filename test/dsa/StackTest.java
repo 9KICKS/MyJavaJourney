@@ -54,13 +54,13 @@ class StackTest {
     }
 
     @Test public void pushXandY_peekReturnsYTest() {
-        stack.push(34);
+        stack.push(35);
         stack.push(69);
         int element = stack.peek();
         assertEquals(69, element);
         element = stack.pop();
         assertEquals(69, element);
         element = stack.peek();
-        assertEquals(34, element);
+        assertEquals(35, element);
     }
 }
