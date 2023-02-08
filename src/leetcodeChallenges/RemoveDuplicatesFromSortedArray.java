@@ -1,11 +1,24 @@
 package leetcodeChallenges;
 
+import java.util.Scanner;
+
 public class RemoveDuplicatesFromSortedArray {
     public static void main (String[] args) {
-        //Scanner input = new
-        int arr[] = {2,3,4,4,5,6,6,6,7,8,8};
-        int a = arr.length;
-        System.out.print(a);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array: ");
+        int arrayLength = input.nextInt();
+        int[] numbers = new int[arrayLength];
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < arrayLength; i++) {
+            numbers[i] = input.nextInt();
+        }
+        int length = removeDuplicates(numbers);
+        System.out.println("The new length of the array without duplicates is: " + length);
+        System.out.print("The array without duplicates is: [ ");
+        for (int i = 0; i < length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("]");
     }
 
     public static int removeDuplicates(int[] numbers) {
