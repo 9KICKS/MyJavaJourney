@@ -1,4 +1,4 @@
-package assignments;
+package assignments.studentGrade;
 
 import java.util.Scanner;
 
