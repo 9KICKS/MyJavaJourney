@@ -1,4 +1,4 @@
-package assignments;
+package assignments.studentGrade;
 
 public class Question {
     private String optionA;
