@@ -1,5 +1,7 @@
 package assignments;
 
+import assignments.studentGrade.Question;
+
 import java.util.Scanner;
 
 public class MBTIPersonalityTest {
