@@ -1,4 +1,4 @@
-package assignments;
+package assignments.sevenSegment;
 
 public class SevenSegment {
     static String[][] sevenSegmentDisplay = new String[5][4];
