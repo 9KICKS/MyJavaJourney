@@ -1,4 +1,4 @@
-package assignments;
+package assignments.eCommerceCheckoutSystem;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

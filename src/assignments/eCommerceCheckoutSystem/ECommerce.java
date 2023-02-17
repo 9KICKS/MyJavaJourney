@@ -1,4 +1,4 @@
-package assignments;
+package assignments.eCommerceCheckoutSystem;
 
 public class ECommerce {
     private String purchasedItem;
