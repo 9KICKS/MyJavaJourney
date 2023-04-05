@@ -5,8 +5,8 @@ public class AboutPizza {
     private final int eatenSlices;
     private final int leftOvers;
 
-    public AboutPizza(int numBoxes, int eatenSlices, int leftOvers) {
-        this.numberOfBoxes = numBoxes;
+    public AboutPizza(int numberOfBoxes, int eatenSlices, int leftOvers) {
+        this.numberOfBoxes = numberOfBoxes;
         this.eatenSlices = eatenSlices;
         this.leftOvers = leftOvers;
     }
