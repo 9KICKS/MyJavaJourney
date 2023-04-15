@@ -2,7 +2,7 @@ package selfStudy;
 
 import java.util.Scanner;
 
-public class BinarySearch {
+public class GuessGame {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int numberToBeGuessed = (int)(Math.random() * 100) + 1;
