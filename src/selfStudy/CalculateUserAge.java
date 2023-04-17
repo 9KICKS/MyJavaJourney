@@ -13,7 +13,7 @@ public class CalculateUserAge {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate birthdate = LocalDate.parse(userBirthdate, formatter);
         LocalDate today = LocalDate.now();
-        int age = Period.between(birthdate, today).getYears();
-        System.out.println("You are " + age + " years old.");
+        int userAge = Period.between(birthdate, today).getYears();
+        System.out.println("You are " + userAge + " years old.");
     }
 }
