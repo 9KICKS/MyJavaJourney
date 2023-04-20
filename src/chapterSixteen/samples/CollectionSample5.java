@@ -1,4 +1,4 @@
-package chapterSixteen;
+package chapterSixteen.samples;
 
 import java.util.HashSet;
 import java.util.Set;

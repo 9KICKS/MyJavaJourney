@@ -1,8 +1,9 @@
-package chapterSixteen;
+package chapterSixteen.samples;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CollectionSample2 {
+public class CollectionSample3 {
     public static void main(String[] args) {
         List<Integer> digits = new ArrayList<>();
         digits.add(10);
@@ -10,8 +11,7 @@ public class CollectionSample2 {
         digits.add(30);
         digits.add(40);
 
-        digits.remove((Integer) 10);
-        digits.remove(0);
-        System.out.println(digits);
+        Integer number = digits.get(2);
+        System.out.println(number);
     }
 }
