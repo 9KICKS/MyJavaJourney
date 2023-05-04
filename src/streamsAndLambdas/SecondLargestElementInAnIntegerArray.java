@@ -1,4 +1,4 @@
-package selfStudy;
+package streamsAndLambdas;
 
 import java.util.Comparator;
 import java.util.stream.IntStream;
