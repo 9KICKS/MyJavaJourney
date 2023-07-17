@@ -12,39 +12,41 @@ public class SpiralPattern {
 
         int[][] matrix = new int[rows][columns];
         int value = 1;
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 matrix[i][j] = value++;
             }
         }
+        printSpiral(matrix);
+    }
 
+    public static void printSpiral(int[][] matrix) {
         int startRow = 0;
-        int endRow = rows - 1;
+        int endRow = matrix.length - 1;
         int startColumn = 0;
-        int endColumn = columns - 1;
+        int endColumn = matrix[0].length - 1;
 
         while (startRow <= endRow && startColumn <= endColumn) {
             for (int i = startColumn; i <= endColumn; i++) {
-                System.out.println(matrix[startRow][i] + " ");
+                System.out.print(matrix[startRow][i] + " ");
             }
             startRow++;
 
             for (int i = startRow; i <= endRow; i++) {
-                System.out.println(matrix[i][endColumn] + " ");
+                System.out.print(matrix[i][endColumn] + " ");
             }
             endColumn--;
 
             if (startRow <= endRow) {
                 for (int i = endColumn; i >= startColumn; i--) {
-                    System.out.println(matrix[endRow][i] + " ");
+                    System.out.print(matrix[endRow][i] + " ");
                 }
                 endRow--;
             }
 
             if (startColumn <= endColumn) {
                 for (int i = endRow; i >= startRow; i--) {
-                    System.out.println(matrix[i][startColumn] + " ");
+                    System.out.print(matrix[i][startColumn] + " ");
                 }
                 startColumn++;
             }
